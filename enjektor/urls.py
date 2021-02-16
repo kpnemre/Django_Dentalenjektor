@@ -25,6 +25,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     # path('', index, name='index'),
     path('',include('home.urls')),
+    path('',include('pages.urls')),
     # home app i ne yönlendiriyor requestleri
     
 ]

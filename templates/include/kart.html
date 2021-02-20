@@ -1,0 +1,22 @@
+<div class="row counters clearfix mb-0 topmargin-sm align-items-stretch">
+    {% for extra in extras %}
+    {% if extra.ekstra_tipi.title == 'kart' %}
+    {% for extracontent in extra.ekstra_contents.all %}
+    <div class="col-lg-3 col-md-6 dark text-center min-vh-40" style="background: url('{{extracontent.image.url}}') no-repeat center center; background-size: cover;">
+        <div class="bg-overlay">
+            <div class="bg-overlay-content dark">
+                <div>
+                    <i class="{{extracontent.icon.title}}"></i>
+                    <div class="counter counter-lined"><span data-from="0" data-to="{{extracontent.short_content}}" data-refresh-interval="10" data-speed="2300"></span></div>
+                    <h5>{{extracontent.title}}</h5>
+                </div>
+            </div>
+            <div class="bg-overlay-bg op-ts op-1" data-hover-animate="op-0" data-hover-animate-out="op-1" style="background-color: rgba(229, 57, 53, 0.8);"></div>
+        </div>
+    </div>
+    {% endfor %}
+    {% endif %}
+    {% endfor %}
+
+
+</div>

@@ -1,8 +1,8 @@
 <div class="row counters clearfix mb-0 topmargin-sm align-items-stretch">
     {% for extra in extras %}
     {% if extra.ekstra_tipi.title == 'kart' %}
-    {% for extracontent in extra.ekstra_contents.all %}
-    <div class="col-lg-3 col-md-6 dark text-center min-vh-40" style="background: url('{{extracontent.image.url}}') no-repeat center center; background-size: cover;">
+    {% for extracontent in extra.ekstracontent_set.all %}
+    <div class="col-xs-12 col-sm dark text-center min-vh-40" style="background: url('{{extracontent.image.url}}') no-repeat center center; background-size: cover;">
         <div class="bg-overlay">
             <div class="bg-overlay-content dark">
                 <div>

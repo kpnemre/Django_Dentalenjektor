@@ -33,15 +33,15 @@ class Header(models.Model):
 
 class Template(models.Model):
     name = models.CharField("html template", max_length=50)
-    ekstras = models.ManyToManyField('pages.EkstraContent', null = True, blank = True)
+    #ekstras = models.ManyToManyField('pages.EkstraContent', null = True, blank = True)
     
     def __str__(self):
         return self.name
 
 class Ekstra(models.Model):
-    title = models.CharField("html template", max_length=50)
-    ekstra_contents = models.ManyToManyField('pages.EkstraContent', null = True, blank = True)
-    html_code = models.TextField("Html kodu")
+    title = models.CharField("Başlık", max_length=50)
+    #ekstra_contents = models.ManyToManyField('pages.EkstraContent', null = True, blank = True)
+    #html_code = models.TextField("Html kodu")
     ekstra_tipi = models.ForeignKey("pages.EkstraType", null = True, blank = True, on_delete = models.SET_NULL)
     
     def __str__(self):
@@ -49,7 +49,7 @@ class Ekstra(models.Model):
 
 
 class EkstraType(models.Model):
-    title = models.CharField("html template", max_length=50)
+    title = models.CharField("Başlık", max_length=50)
     
     def __str__(self):
         return self.title
@@ -60,7 +60,7 @@ class EkstraContent(models.Model):
     short_content = models.CharField("kısa açıklama", max_length=75)
     image = models.ImageField("resim", null = True, blank = True)
     icon = models.ForeignKey("pages.Icon", null = True, blank = True, on_delete=models.SET_NULL)
-    
+    ekstra = models.ForeignKey("pages.Ekstra", null = True, blank = True, on_delete=models.SET_NULL)
     def __str__(self):
         return self.title
     

@@ -23,7 +23,8 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('grappelli/', include('grappelli.urls')), # grappelli URLS
     path('admin/', admin.site.urls),
-    path('', include('pages.urls')),    
+    path('', include('pages.urls')),
+    path('_nested_admin/', include('nested_admin.urls')),    
 ]
 if settings.DEBUG: 
         urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

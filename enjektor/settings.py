@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'crispy_forms',
     'pages.apps.PagesConfig',
     'ckeditor',
+    'nested_admin',
 ]
 
 MIDDLEWARE = [

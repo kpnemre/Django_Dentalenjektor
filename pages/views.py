@@ -11,7 +11,7 @@ def index(request):
         #"dropdown_headers":dropdown_headers,
         "headers": headers,
     }
-    return render(request,'index.html', context)
+    return render(request,'index2.html', context)
 
 def header_detail(request, slug):
     header = get_object_or_404(Header, slug=slug)

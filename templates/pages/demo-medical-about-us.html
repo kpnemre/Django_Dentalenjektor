@@ -141,7 +141,7 @@
 					<div class="row col-mb-50 mb-0">
 						{% for extra in extras %}
 						{% if extra.ekstra_tipi.title == 'icon' %}
-						{% for extracontent in extra.ekstra_contents.all %}
+						{% for extracontent in extra.ekstracontent_set.all %}
 
 						<div class="col-sm-6 col-lg-4">
 							<div class="feature-box fbox-plain">
@@ -154,6 +154,7 @@
 								</div>
 							</div>
 						</div>
+						
 						{% endfor %}
 						{% endif %}
 						{% endfor %}
@@ -184,7 +185,7 @@
 										
 										{% for extra in extras %}
 										{% if extra.ekstra_tipi.title == 'hours' %}
-										{% for extracontent in extra.ekstra_contents.all %}
+										{% for extracontent in extra.ekstracontent_set.all %}
 											
 										<div class="row time-table">
 											<h5 class="col-lg-5">{{extracontent.title}}</h5>

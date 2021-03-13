@@ -8,7 +8,7 @@ class Header(models.Model):
     slug = models.SlugField("site", editable = False, default="")
     created_at = models.DateTimeField(auto_now_add=True, verbose_name= "Created At")
     updated_at = models.DateTimeField(auto_now=True, verbose_name="Updated At")
-    content = RichTextField("İçeirk")
+    content = RichTextField("İçerik")
     description = models.CharField("Sayfanın search engine açıklaması", max_length = 120)
     is_navbar = models.BooleanField("Navbarda gösterilsin mi?", default = True)
     active = models.BooleanField("Sitede gösterilsin mi?", default = True)

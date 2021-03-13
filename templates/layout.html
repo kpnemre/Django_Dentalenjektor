@@ -1,63 +1,104 @@
-{% load static %}
-{% load crispy_forms_tags %}
+{% load static %} {% load crispy_forms_tags %}
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="author" content="SemiColonWeb" />
 
-	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-	<meta name="author" content="SemiColonWeb" />
-
-	<!-- Stylesheets
+    <!-- Stylesheets
 	============================================= -->
-	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,400i,700|Montserrat:400,700|Crete+Round:400i&display=swap" rel="stylesheet" type="text/css" />
-	<link rel="stylesheet" href="{% static 'css/bootstrap.css' %}" type="text/css" />
-	<link rel="stylesheet" href="{% static 'style.css' %}" type="text/css" />
-	<link rel="stylesheet" href="{% static 'css/swiper.css' %}" type="text/css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato:300,400,400i,700|Montserrat:400,700|Crete+Round:400i&display=swap"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      rel="stylesheet"
+      href="{% static 'css/bootstrap.css' %}"
+      type="text/css"
+    />
+    <link rel="stylesheet" href="{% static 'style.css' %}" type="text/css" />
+    <link
+      rel="stylesheet"
+      href="{% static 'css/swiper.css' %}"
+      type="text/css"
+    />
 
-	<!-- Medical Demo Specific Stylesheet -->
-	<link rel="stylesheet" href="{% static 'demos/covid-care/covid-care.css' %}" type="text/css" />
-	<link rel="stylesheet" href="{% static 'demos/covid-care/css/fonts.css' %}" type="text/css" />
-	<!-- / -->
+    <!-- Medical Demo Specific Stylesheet -->
+    <link
+      rel="stylesheet"
+      href="{% static 'demos/covid-care/covid-care.css' %}"
+      type="text/css"
+    />
+    <link
+      rel="stylesheet"
+      href="{% static 'demos/covid-care/css/fonts.css' %}"
+      type="text/css"
+    />
+    <!-- / -->
 
-	<link rel="stylesheet" href="{% static 'css/dark.css' %}" type="text/css" />
-	<link rel="stylesheet" href="{% static 'css/font-icons.css' %}" type="text/css" />
-	<!-- <link rel="stylesheet" href="{% static 'demos/medical/css/medical-icons.css' %}" type="text/css" /> -->
-	<link rel="stylesheet" href="{% static 'css/animate.css' %}" type="text/css" />
-	<link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}" type="text/css" />
+    <link rel="stylesheet" href="{% static 'css/dark.css' %}" type="text/css" />
+    <link
+      rel="stylesheet"
+      href="{% static 'css/font-icons.css' %}"
+      type="text/css"
+    />
+    <!-- <link rel="stylesheet" href="{% static 'demos/medical/css/medical-icons.css' %}" type="text/css" /> -->
+    <link
+      rel="stylesheet"
+      href="{% static 'css/animate.css' %}"
+      type="text/css"
+    />
+    <link
+      rel="stylesheet"
+      href="{% static 'css/magnific-popup.css' %}"
+      type="text/css"
+    />
 
-	<!-- <link rel="stylesheet" href="{% static 'demos/medical/fonts.css' %}" type="text/css" /> -->
+    <!-- <link rel="stylesheet" href="{% static 'demos/medical/fonts.css' %}" type="text/css" /> -->
 
-	<link rel="stylesheet" href="{% static 'css/custom.css' %}" type="text/css" />
-	<meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="{% static 'css/custom.css' %}"
+      type="text/css"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-	<link rel="stylesheet" href="{% static 'css/colors.php?color=DE6262' %}" type="text/css" />
+    <link
+      rel="stylesheet"
+      href="{% static 'css/colors.php?color=DE6262' %}"
+      type="text/css"
+    />
 
-	<!-- Document Title
+    <!-- Document Title
 	============================================= -->
-	<title>Covid Care | Canvas</title>
-
-
+    <title>Covid Care | Canvas</title>
 
     <!-- <title>{{setting.title}}</title> -->
-</head>
-
+  </head>
+  <body class="stretched">
+	<div id="wrapper" class="clearfix">
+    {% include "include/navbar.html" %} 
 	
-	
-    {% block body %}
-	
-	{% endblock %}
+    {% block content %}
+        
+    {% endblock content %}
 
-    	<!-- Go To Top
+
+	{% include "include/footer.html" %}
+
+</div><!-- #wrapper end -->
+    <!-- Go To Top
 	============================================= -->
-	<div id="gotoTop" class="icon-angle-up rounded-circle"></div>
+    <div id="gotoTop" class="icon-angle-up rounded-circle"></div>
 
-	<!-- JavaScripts
+    <!-- JavaScripts
 	============================================= -->
-	<script src="{% static  'js/jquery.js' %}"></script>
-	<script src="{% static  'js/plugins.min.js' %}"></script>
+    <script src="{% static  'js/jquery.js' %}"></script>
+    <script src="{% static  'js/plugins.min.js' %}"></script>
 
-	<!-- Footer Scripts
+    <!-- Footer Scripts
 	============================================= -->
-	<script src="{% static  'js/functions.js' %}"></script>
-
+    <script src="{% static  'js/functions.js' %}"></script>
+  </body>
 </html>

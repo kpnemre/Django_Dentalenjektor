@@ -33,16 +33,16 @@ class Home(models.Model):
     
     class Meta:
         ordering = ['order']
-        verbose_name_plural = "Başlıklar"
-        verbose_name ="Başlık"
+        verbose_name_plural = "Herbir Sayfa Ortak Girdiler "
+        verbose_name ="Herbir Sayfa Ortak Girdi "
     
     
     def __str__(self):
         return self.title
     
-    def save(self, *args, **kwargs):
-        self.slug = slugify(self.title.replace("ı", "i").replace("I", "i").lower())
-        super(Header, self).save(*args, **kwargs)
+    # def save(self, *args, **kwargs):
+    #     self.slug = slugify(self.title.replace("ı", "i").replace("I", "i").lower())
+    #     super(Header, self).save(*args, **kwargs)
 
 class HomeDetail(models.Model):
     title = models.CharField("Başlık", max_length = 75)
@@ -65,8 +65,8 @@ class HomeMiddleHeader(models.Model):
     
     class Meta:
         ordering = ['order']
-        verbose_name_plural = "Orta Sayfa başlıklar"
-        verbose_name ="Orta Sayfa Başlık"
+        verbose_name_plural = "Ana Sayfa Orta Alan Başlıklar"
+        verbose_name ="Ana Sayfa Orta Alan Başlık"
     
 class HomeMiddleDetail(models.Model):
     header = models.ForeignKey("pages.HomeMiddleHeader", null= True, blank = True, on_delete = models.CASCADE)
@@ -79,8 +79,8 @@ class HomeMiddleDetail(models.Model):
     
     class Meta:
         ordering = ['order']
-        verbose_name_plural = "Anasayfa Detaylar"
-        verbose_name ="Anasayfa Detay" 
+        verbose_name_plural = "Ana Sayfa Orta Alan Detaylar"
+        verbose_name ="Ana Sayfa Orta Alan Detay" 
         
 class HomeIcon(models.Model):
     title = models.CharField("Başlık", max_length = 75)

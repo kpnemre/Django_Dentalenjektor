@@ -3,6 +3,13 @@ from django.utils.translation import gettext_lazy as _
 import nested_admin
 from .models import *
 
+admin.site.register(Home)
+admin.site.register(HomeDetail)
+admin.site.register(HomeMiddleHeader)
+admin.site.register(HomeMiddleDetail)
+admin.site.register(HomeIcon)
+admin.site.register(HomeFooterUp)
+admin.site.register(Icon)
 
 # admin.site.register(Home)
 

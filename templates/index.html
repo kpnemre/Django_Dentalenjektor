@@ -6,13 +6,21 @@
 
 	<!-- Document Wrapper
 	============================================= -->
-
+    <style>
+		.slider-element { background: linear-gradient(to right, rgba(255,255,255,1) 40%, rgba(70,193,176, .7)), url('{{home.image.url}}') no-repeat 90% 100% / auto 100%; }
+	  
+	  @media (min-width: 992px) {
+		.slider-element {
+		  background: linear-gradient(to right, rgba(255,255,255,0), rgba(70,193,176, 0.17)), url('{{home.image.url}}') no-repeat 90% 100% / auto 100%;
+		}
+	  }
+	  </style>
 
 
 
 		<!-- Slider / Hero
 		============================================= -->
-		<div id="slider" class="slider-element dark py-5">
+		<div id="slider" class="slider-element dark py-5" >
 
 			<div class="container">
 				<div class="row">
@@ -131,70 +139,20 @@
 					============================================= -->
 					<div class="row justify-content-between align-items-center my-6 col-mb-50">
 						<div class="col-lg-5">
-							<h3 class="display-3 color font-weight-normal font-display mb-5">{{home.below_title}}</h3>
 
+
+							<h3 class="display-3 color font-weight-normal font-display mb-5">{{first_middle_header.title}}</h3>
+
+							{% for middle in first_middle_header.homemiddledetail_set.all %}
 							<div class="feature-box fbox-sm mb-4">
 								<div class="fbox-icon">
 									<i class="bg-color-50 color icon-line-calendar"></i>
 								</div>
 								<div class="fbox-content">
-									<h3 class="nott text-larger font-weight-normal mb-2">Same-Day Appointments.</h3>
+									<h3 class="nott text-larger font-weight-normal mb-2">{{middle.title}}</h3>
 								</div>
 							</div>
-
-							<div class="feature-box fbox-sm mb-4">
-								<div class="fbox-icon">
-									<i class="bg-color-50 color icon-line-speech-bubble"></i>
-								</div>
-								<div class="fbox-content">
-									<h3 class="nott text-larger font-weight-normal mb-2">Get Unlimited 24/7 chat with no extra cost.</h3>
-								</div>
-							</div>
-
-							<div class="feature-box fbox-sm mb-4">
-								<div class="fbox-icon">
-									<i class="bg-color-50 color icon-line-video"></i>
-								</div>
-								<div class="fbox-content">
-									<h3 class="nott text-larger font-weight-normal mb-2">Anytime video-call with no extra cost.</h3>
-								</div>
-							</div>
-
-							<div class="feature-box fbox-sm mb-4">
-								<div class="fbox-icon">
-									<i class="bg-color-50 color icon-head-side-mask"></i>
-								</div>
-								<div class="fbox-content">
-									<h3 class="nott text-larger font-weight-normal mb-2">Masks, Sanitizers and Gloves will be provided.</h3>
-								</div>
-							</div>
-
-							<div class="feature-box fbox-sm mb-4">
-								<div class="fbox-icon">
-									<i class="bg-color-50 color icon-line-phone-call"></i>
-								</div>
-								<div class="fbox-content">
-									<h3 class="nott text-larger font-weight-normal mb-2">Direct Conversation with Our Specialists.</h3>
-								</div>
-							</div>
-
-							<div class="feature-box fbox-sm mb-4">
-								<div class="fbox-icon">
-									<i class="bg-color-50 color icon-line-map-pin"></i>
-								</div>
-								<div class="fbox-content">
-									<h3 class="nott text-larger font-weight-normal mb-2">We're available in 23 Major Cities.</h3>
-								</div>
-							</div>
-
-							<div class="feature-box fbox-sm mb-5">
-								<div class="fbox-icon">
-									<i class="bg-color-50 color icon-hospital2"></i>
-								</div>
-								<div class="fbox-content">
-									<h3 class="nott text-larger font-weight-normal mb-2">Connected with Major Hospitals.</h3>
-								</div>
-							</div>
+							{% endfor %}
 
 							<a href="#" class="color font-weight-bold border-bottom border-width-2 border-color mr-2 text-capitalize">Learn more about our Support</a><i class="icon-chevron-right icon-stacked text-smaller color"></i>
 						</div>

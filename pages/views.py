@@ -2,7 +2,6 @@ from django.shortcuts import get_object_or_404, render, redirect
 from django.contrib import messages
 
 from .models import *
-from .forms import ContactForm
 
 # from .models import Page, Header
 
@@ -11,6 +10,8 @@ def index(request):
     homedetails= HomeDetail.objects.filter(active = True)
     homefooterup= HomeFooterUp.objects.filter(active = True)
     homemiddleheader = HomeMiddleHeader.objects.filter(active = True)
+    first_middle_header = homemiddleheader.first()
+    last_middle_header = homemiddleheader.last()
     #headers = Header.objects.filter(active=True,is_navbar=True)
     #main_headers = headers.filter(is_dropdown=False)
     #dropdown_headers= headers.filter(is_dropdown=True)
@@ -18,7 +19,8 @@ def index(request):
         "home":home,
         "homedetails":homedetails,
         "homefooterup":homefooterup,
-        "homemiddleheader":homemiddleheader,
+        "first_middle_header": first_middle_header,
+        "last_middle_header": last_middle_header
         #"main_headers": main_headers,
         #"dropdown_headers":dropdown_headers,
         # "headers": headers,
@@ -30,17 +32,24 @@ def contact(request):
     # contact= ContactInfo.objects.filter(active = True)
     setting= Setting.objects.first()    
     if request.method == 'POST':
-        print(request.POST)
-        form = ContactForm(request.POST)
-        if form.is_valid():
-            form.save()
-            messages.success(request, 'Başarı bir şekilde mesajınız tarafımıza iletilmiştir. En kısa sürede sizinle iletişime geçilecektir.')
-            return redirect("home")
-    else:
-        form = ContactForm()
+        name = request.POST.get("template-contactform-name", "")
+        email = request.POST.get("template-contactform-email", "")
+        message = request.POST.get("template-contactform-message", "")
+        print(name, email, message)
+        if name and email and message:
+            ContactInfo.objects.create(name= name, email=email, message=message, active=False)
+            return redirect("pages:home")
+        else:
+            messages.error(request, 'Lütfen tüm alanları doldurunuz.')
+            return redirect("pages:contact")            
+            
+        messages.success(request, 'Başarı bir şekilde mesajınız tarafımıza iletilmiştir. En kısa sürede sizinle iletişime geçilecektir.')
+        
+
+       
     
     context = {
-        "form": form,
+       
         # "contact":contact,
         # "abouts": abouts,
         # "rentings": rentings,

@@ -12,13 +12,7 @@
 .bg-color-2 { background-color: #FFCD8C !important; }
 .color-2 { color: #FFCD8C !important; }
 
-.slider-element { background: linear-gradient(to right, rgba(255,255,255,1) 40%, rgba(70,193,176, .7)), url('images/1.png') no-repeat 90% 100% / auto 100%; }
 
-@media (min-width: 992px) {
-	.slider-element {
-		background: linear-gradient(to right, rgba(255,255,255,0), rgba(70,193,176, 0.17)), url('images/1.png') no-repeat 90% 100% / auto 100%;
-	}
-}
 
 .feature-box-border .feature-box { position: relative; }
 

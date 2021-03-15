@@ -77,18 +77,18 @@
     <!-- <title>{{setting.title}}</title> -->
   </head>
   <body class="stretched">
-	<div id="wrapper" class="clearfix">
-    {% include "include/navbar.html" %} 
-	
-    {% block content %}
-        
-    {% endblock content %}
+    <div id="wrapper" class="clearfix">
+      {% include "include/navbar.html" %}
 
 
-	{% include "include/footer.html" %}
-
-</div>
-<!-- #wrapper end -->
+       {% block content %} 
+       
+       {% endblock content %} 
+       
+       
+       {% include "include/footer.html" %}
+    </div>
+    <!-- #wrapper end -->
     <!-- Go To Top
 	============================================= -->
     <div id="gotoTop" class="icon-angle-up rounded-circle"></div>

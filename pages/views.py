@@ -20,8 +20,7 @@ def index(request):
         "homedetails":homedetails,
         "homefooterup":homefooterup,
         "first_middle_header": first_middle_header,
-        "last_middle_header": last_middle_header
-        #"main_headers": main_headers,
+        "last_middle_header": last_middle_header,
         #"dropdown_headers":dropdown_headers,
         # "headers": headers,
     }
@@ -43,11 +42,8 @@ def contact(request):
             messages.error(request, 'Lütfen tüm alanları doldurunuz.')
             return redirect("pages:contact")            
             
-        messages.success(request, 'Başarı bir şekilde mesajınız tarafımıza iletilmiştir. En kısa sürede sizinle iletişime geçilecektir.')
-        
-
-       
-    
+    messages.success(request, 'Başarı bir şekilde mesajınız tarafımıza iletilmiştir. En kısa sürede sizinle iletişime geçilecektir.')
+      
     context = {
        
         # "contact":contact,
@@ -56,7 +52,6 @@ def contact(request):
         "setting":setting,
         #"active_offer": "active"
     }
-
     return render(request, "contact.html", context)
 
 def about(request):

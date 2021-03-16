@@ -157,7 +157,7 @@
 							<a href="#" class="color font-weight-bold border-bottom border-width-2 border-color mr-2 text-capitalize">Learn more about our Support</a><i class="icon-chevron-right icon-stacked text-smaller color"></i>
 						</div>
 						<div class="col-lg-6">
-							<img src="" alt="Phone call" class="rounded">
+							<img src="{{first_middle_header.image.url}}" alt="{{first_middle_header.content}}" class="rounded">
 						</div>
 					</div>
 
@@ -180,20 +180,22 @@
 					============================================= -->
 					<div class="row justify-content-between align-items-center my-6 col-mb-50">
 						<div class="col-lg-5">
-							<h3 class="display-3 color font-weight-normal font-display mb-5">Prevention of Covid-19</h3>
+							<h3 class="display-3 color font-weight-normal font-display mb-5">{{last_middle_header.title}}</h3>
 
-							<p class="text-large color">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur veniam voluptas repellat mollitia laboriosam nulla sit perspiciatis.</p>
-
+							<p class="text-large color">{{last_middle_header.content}}</p>
+							{% for middle in last_middle_header.homemiddledetail_set.all %}
 							<div class="feature-box fbox-sm mb-2">
 								<div class="fbox-icon">
 									<i class="bg-color-50 color icon-head-side-mask"></i>
 								</div>
 								<div class="fbox-content">
-									<h3 class="nott text-larger font-weight-normal mb-2">Wear a Mask</h3>
+									<h3 class="nott text-larger font-weight-normal mb-2">{{middle.title}}</h3>
 								</div>
 							</div>
+							{% endfor %}
 
-							<div class="feature-box fbox-sm mb-2">
+
+							<!-- <div class="feature-box fbox-sm mb-2">
 								<div class="fbox-icon">
 									<i class="bg-color-50 color icon-head-side-virus"></i>
 								</div>
@@ -227,14 +229,14 @@
 								<div class="fbox-content">
 									<h3 class="nott text-larger font-weight-normal mb-2">Cover your Coughs</h3>
 								</div>
-							</div>
+							</div> -->
 
 							<div class="clear"></div>
 
 								<a href="#" class="color font-weight-bold border-bottom border-width-2 border-color mr-2 text-capitalize">Learn more</a><i class="icon-chevron-right icon-stacked text-smaller color"></i>
 						</div>
 						<div class="col-lg-6">
-							<img src="demos/covid-care/images/covid.jpg" alt="Phone call" class="rounded">
+							<img src="{{last_middle_header.image.url}}" alt="Phone call" class="rounded">
 						</div>
 					</div>
 

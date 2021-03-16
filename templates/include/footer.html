@@ -10,7 +10,7 @@
 
             <div class="row justify-content-center">
                 <div class="col-md-7 mb-3 text-center">
-                    <h3 class="display-3 font-weight-normal font-display mb-5 text-white">Download Our COVID Care App.</h3>
+                    <!-- <h3 class="display-3 font-weight-normal font-display mb-5 text-white">Download Our COVID Care App.</h3> -->
                     <!-- <a href="#" class="button button-light button-large rounded-pill bg-color-2 text-dark px-4 py-2 h-op-09 op-ts">Register</a> -->
                     <!-- <a href="#" class="button button-light button-large bg-white rounded-pill color px-4 py-2 ml-2 h-op-09 op-ts">Download App</a> -->
                 </div>
@@ -68,31 +68,23 @@
 
                         <div class="row">
                             <div class="col-12 mb-3">
-                                <small>Call Us:</small>
-                                <h4 class="h4">(1) 22 55412474</h4>
+                                <h3>Bizi Arayın:</h3>
+                                <!-- <h4 class="h4">{{setting.phone}}</h4> -->
+                                <h4 class="h4">{{setting.phone}}</h4>
                             </div>
 
                             <div class="col-12 d-flex justify-content-center justify-content-lg-end">
-                                <a href="#" class="social-icon si-small si-light si-facebook">
-                                    <i class="icon-facebook"></i>
-                                    <i class="icon-facebook"></i>
-                                </a>
-                                <a href="#" class="social-icon si-small si-light si-delicious">
-                                    <i class="icon-delicious"></i>
-                                    <i class="icon-delicious"></i>
-                                </a>
-                                <a href="#" class="social-icon si-small si-light si-paypal">
-                                    <i class="icon-paypal"></i>
-                                    <i class="icon-paypal"></i>
-                                </a>
-                                <a href="#" class="social-icon si-small si-light si-flattr">
-                                    <i class="icon-flattr"></i>
-                                    <i class="icon-flattr"></i>
-                                </a>
+
+                                {% url 'pages:home' %}
+                                    <a href="{{setting.facebook_url}}" class="social-icon si-small si-light si-facebook"><i class="icon-facebook"></i></a>
+                                    <a href="{{setting.instagram_url}}" class="social-icon si-small si-light si-instagram"><i class="icon-instagram"></i></a>
+                                    <a href="{{setting.linkedin_url}}" class="social-icon si-small si-light si-linkedin"><i class="icon-linkedin"></i></a>
+                                    <a href="{{setting.twitter_url}}" class="social-icon si-small si-light si-twitter"><i class="icon-twitter"></i></a>
+
                             </div>
 
-                            <div class="col-12 mt-5 text-white-50 text-smaller">
-                                All Rights Reserved <br>&copy; 2020 by SemiColonWeb<br>
+                            <div class="col-12 mt-5 text-white-50 ">
+                                All Rights Reserved <br>&copy; 2021 by RasyonelDental<br>
                             </div>
                         </div>
 

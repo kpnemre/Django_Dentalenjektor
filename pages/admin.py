@@ -1,8 +1,13 @@
 from django.contrib import admin
-
+import nested_admin
 from .models import *
 
+class AboutContentInline(nested_admin.NestedStackedInline):
+    model = AboutContent
 
+
+class AboutAdmin(nested_admin.NestedModelAdmin):
+    inlines = [AboutContentInline]
 
 
 
@@ -15,4 +20,7 @@ admin.site.register(HomeFooterUp)
 admin.site.register(Icon)
 admin.site.register(Setting)
 admin.site.register(ContactInfo)
+admin.site.register(About, AboutAdmin)
+# admin.site.register(About)
+# admin.site.register(AboutContent)
 

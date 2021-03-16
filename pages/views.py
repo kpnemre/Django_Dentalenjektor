@@ -54,13 +54,18 @@ def contact(request):
     }
     return render(request, "contact.html", context)
 
+
+
 def about(request):
-    home = Home.objects.first()
-    
+    about = About.objects.first()
+    aboutcontents= AboutContent.objects.all()
     context = {
-        "home":home,
+        "about":about,
+        "aboutcontents":aboutcontents,
     }
     return render(request,'about.html', context)
+
+
 
 def services(request):
     home = Home.objects.first()

@@ -147,7 +147,51 @@ class ContactInfo(models.Model):
 
     def __str__(self):
         return self.name   
-        
+
+class About(models.Model):
+    about_title= models.CharField("Hakkımızda Resim Ortası Başlık", max_length=50)
+    about_main_image= models.ImageField("Hakkımızda Ana Resim", null = True, blank = True)
+    images_title= models.CharField("Hakkımızda Resimler Başlık", max_length=50)
+    images_content= models.CharField("Hakkımızda Resimler İçerik", max_length=50)
+    youtube_url = models.URLField("Hakkımızda Video Linki")
+    button_name= models.CharField("Hakkımızda Video Buton Üzerindeki Yazı", max_length=50)
+    images_image1= models.ImageField("Hakkımızda Resimler Resim1", null = True, blank = True)
+    images_image1_content= models.CharField("Hakkımızda Resimler Resim1 açıklaması", max_length=50)
+    images_image2= models.ImageField("Hakkımızda Resimler Resim2", null = True, blank = True)
+    images_image2_content= models.CharField("Hakkımızda Resimler Resim2 açıklaması", max_length=50)
+    images_image3= models.ImageField("Hakkımızda Resimler Resim3", null = True, blank = True)
+    images_image3_content= models.CharField("Hakkımızda Resimler Resim3 açıklaması", max_length=50)
+    images_image4= models.ImageField("Hakkımızda Resimler Resim4", null = True, blank = True)
+    images_image4_content= models.CharField("Hakkımızda Resimler Resim4 açıklaması", max_length=50)
+    middle_title=models.CharField("Hakkımızda Footer Üstü Başlık", blank = True, max_length=50)
+    middle_content=models.CharField("Hakkımızda Footer Üstü İçerik", blank = True, max_length=100)
+    middle_image1= models.ImageField("Hakkımızda Footer Üstü Resim",blank = True)
+    middle_image1_content= models.CharField("Hakkımızda Footer Üstü Resim Açıklaması",blank = True, max_length=50)
+    middle_image2= models.ImageField("Hakkımızda Footer Üstü Resim", blank = True)
+    middle_image2_content= models.CharField("Hakkımızda Footer Üstü Resim Açıklaması", blank = True, max_length=50)
+    
+    
+    
+    class Meta:
+        verbose_name = 'Hakkımızda İçerik'
+        verbose_name_plural = 'Hakkımızda İçerikler'
+
+    def __str__(self):
+        return self.about_title 
+    
+class AboutContent(models.Model):
+    about = models.ForeignKey(About, on_delete = models.CASCADE, related_name='aboutcontent')
+    title= models.CharField("Hakkımızda Başlık", max_length=50)
+    image= models.ImageField("Hakkımızda Resim", null = True, blank = True)
+    content=models.CharField(" Hakkımızda içerik", blank=True, max_length=250)
+    
+    class Meta:
+        verbose_name = 'Hakkımızda Bilgi'
+        verbose_name_plural = 'Hakkımızda Bilgiler'
+
+    def __str__(self):
+        return self.title 
+       
 class Setting(models.Model):
     title = models.CharField("title", max_length=50)
     description = models.CharField("Google'da çıkacak olan yazı", max_length=150)

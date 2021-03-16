@@ -68,10 +68,10 @@ def about(request):
 
 
 def services(request):
-    home = Home.objects.first()
+    services = Services.objects.first()
     
     context = {
-        "home":home,
+        "services":services,
     }
     return render(request,'services.html', context)
 

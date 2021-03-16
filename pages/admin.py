@@ -21,6 +21,8 @@ admin.site.register(Icon)
 admin.site.register(Setting)
 admin.site.register(ContactInfo)
 admin.site.register(About, AboutAdmin)
+admin.site.register(Services)
+
 # admin.site.register(About)
 # admin.site.register(AboutContent)
 

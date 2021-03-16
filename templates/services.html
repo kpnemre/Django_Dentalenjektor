@@ -7,13 +7,13 @@
 
 		<!-- Slider / Hero
 		============================================= -->
-		<div id="slider" class="slider-element dark p-0" style="background-size: cover; background-image: url('demos/covid-care/images/page-title/services.jpg'); background-position: center center; background-repeat: no-repeat;">
+		<div id="slider" class="slider-element dark p-0" style="background-size: cover; background-image: url('{{services.main_image.url}}'); background-position: center center; background-repeat: no-repeat;">
 
 			<div class="container">
 				<div class="row text-center py-5 min-vh-md-75 justify-content-center align-items-center">
 					<div class="col-lg-6">
-						<h5 class="mb-1 text-uppercase ls3 text-white-50 font-body">What We Do</h5>
-						<h2 class="display-3 font-weight-bolder ls3 font-display mb-0">Services</h2>
+						<!-- <h5 class="mb-1 text-uppercase ls3 text-white-50 font-body">What We Do</h5> -->
+						<h2 class="display-3 font-weight-bolder ls3 font-display mb-0">{{services.title}}</h2>
 					</div>
 				</div>
 			</div>
@@ -29,14 +29,14 @@
 					============================================= -->
 					<div class="row justify-content-between align-items-center mt-6 col-mb-50">
 						<div class="col-lg-5 order-lg-last">
-							<h3 class="display-3 color font-weight-normal font-display mb-5">Get 24/7 care right from your Device</h3>
+							<h3 class="display-3 color font-weight-normal font-display mb-5">{{services.card1_title}}</h3>
 
-							<p class="text-large color">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur et sequi atque <a href="#" class="bg-color-50 px-1"><u>expedita perferendis tenetur modi</u></a> quia, veniam voluptas repellat mollitia laboriosam nulla sit perspiciatis reprehenderit itaque distinctio facilis amet vel nesciunt quaerat.</p>
+							<p class="text-large color">{{services.card1_content}}</p>
 
 							<a href="#" class="color font-weight-bold border-bottom border-width-2 border-color mr-2 text-capitalize">Learn more about our App</a><i class="icon-chevron-right icon-stacked text-smaller color"></i>
 						</div>
 						<div class="col-lg-5">
-							<img src="demos/covid-care/images/device.png" alt="Phone call" class="rounded">
+							<img src="{{services.card1_image.url}}" alt="{{services.card1_image_cont}}" class="rounded">
 						</div>
 					</div>
 
@@ -44,11 +44,11 @@
 					============================================= -->
 					<div class="row justify-content-between align-items-center my-6 col-mb-50">
 						<div class="col-lg-5">
-							<h3 class="display-3 color font-weight-normal font-display mb-5">Prevention of Covid-19</h3>
+							<h3 class="display-3 color font-weight-normal font-display mb-5">{{services.card2_title}}</h3>
 
-							<p class="text-large color">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur veniam voluptas repellat mollitia laboriosam nulla sit perspiciatis.</p>
+							<p class="text-large color">{{services.card2_content}}</p>
 
-							<div class="feature-box fbox-sm mb-2">
+							<!-- <div class="feature-box fbox-sm mb-2">
 								<div class="fbox-icon">
 									<i class="bg-color-50 color icon-head-side-mask"></i>
 								</div>
@@ -91,14 +91,14 @@
 								<div class="fbox-content">
 									<h3 class="nott text-larger font-weight-normal mb-2">Cover your Coughs</h3>
 								</div>
-							</div>
+							</div> -->
 
 							<div class="clear"></div>
 
 								<a href="#" class="color font-weight-bold border-bottom border-width-2 border-color mr-2 text-capitalize">Learn more</a><i class="icon-chevron-right icon-stacked text-smaller color"></i>
 						</div>
 						<div class="col-lg-6">
-							<img src="demos/covid-care/images/covid.jpg" alt="Phone call" class="rounded">
+							<img src="{{services.card2_image.url}}" alt="{{services.card2_image_cont}}" class="rounded">
 						</div>
 					</div>
 
@@ -106,7 +106,7 @@
 
 				<!-- Download App Section
 				============================================= -->
-				<div class="section py-md-0 section-mobile bg-color-2" style="background: url('demos/covid-care/images/illustration/bg-pattern.svg') no-repeat center left / contain;">
+				<!-- <div class="section py-md-0 section-mobile bg-color-2" style="background: url('demos/covid-care/images/illustration/bg-pattern.svg') no-repeat center left / contain;">
 					<div class="container">
 						<div class="row align-items-center justify-content-between">
 
@@ -129,7 +129,7 @@
 
 						</div>
 					</div>
-				</div>
+				</div> -->
 
 			</div>
 		</section><!-- #content end -->

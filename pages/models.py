@@ -152,7 +152,7 @@ class About(models.Model):
     about_title= models.CharField("Hakkımızda Resim Ortası Başlık", max_length=50)
     about_main_image= models.ImageField("Hakkımızda Ana Resim", null = True, blank = True)
     images_title= models.CharField("Hakkımızda Resimler Başlık", max_length=50)
-    images_content= models.CharField("Hakkımızda Resimler İçerik", max_length=50)
+    images_content= models.TextField("Hakkımızda Resimler İçerik", max_length=50)
     youtube_url = models.URLField("Hakkımızda Video Linki")
     button_name= models.CharField("Hakkımızda Video Buton Üzerindeki Yazı", max_length=50)
     images_image1= models.ImageField("Hakkımızda Resimler Resim1", null = True, blank = True)
@@ -179,6 +179,7 @@ class About(models.Model):
     def __str__(self):
         return self.about_title 
     
+    
 class AboutContent(models.Model):
     about = models.ForeignKey(About, on_delete = models.CASCADE, related_name='aboutcontent')
     title= models.CharField("Hakkımızda Başlık", max_length=50)
@@ -188,6 +189,26 @@ class AboutContent(models.Model):
     class Meta:
         verbose_name = 'Hakkımızda Bilgi'
         verbose_name_plural = 'Hakkımızda Bilgiler'
+
+    def __str__(self):
+        return self.title 
+    
+class Services(models.Model):
+    title= models.CharField("Ana Başlık", max_length=50)
+    main_image= models.ImageField("Ana Resim", null = True, blank = True)
+    card1_title= models.CharField("Hizmetler Başlık", max_length=50)
+    card1_content= RichTextField("Hizmetler Açıklama")
+    card1_image= models.ImageField("Hizmetler Resim", null = True, blank = True)
+    card1_image_cont= models.CharField("Hizmetler Resim Açıklaması", max_length=50)
+    card2_title= models.CharField("Hizmetler Başlık", max_length=50)
+    card2_content= RichTextField("Hizmetler Açıklama")
+    card2_image= models.ImageField("Hizmetler Resim", null = True, blank = True)
+    card2_image_cont= models.CharField("Hizmetler Resim Açıklaması", max_length=50)
+    
+    
+    class Meta:
+        verbose_name = 'Hizmetler İçerik'
+        verbose_name_plural = 'Hizmetler İçerikler'
 
     def __str__(self):
         return self.title 

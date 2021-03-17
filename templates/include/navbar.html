@@ -4,7 +4,8 @@
 		============================================= -->
 		<div id="top-bar" class="py-4 text-center bg-color-2">
 			<div class="container clearfix">
-				<h4 class="mb-0 h6 font-normal">COVID-19? We're in this together &amp; will get through this, Together. <a href="#" class="color font-weight-bold border-bottom border-width-2 border-color font-secondary ml-2">Learn more</a><i class="icon-chevron-right icon-stacked text-smaller color"></i></h4>
+				<!-- <h4 class="mb-0 h6 font-normal">COVID-19? We're in this together &amp; will get through this, Together. <a href="#" class="color font-weight-bold border-bottom border-width-2 border-color font-secondary ml-2">Learn more</a><i class="icon-chevron-right icon-stacked text-smaller color"></i></h4> -->
+				<h4 class="mb-0 h6 font-normal">{{setting.navmessage}} <a href="{% url 'pages:services' %}" class="color font-weight-bold border-bottom border-width-2 border-color font-secondary ml-2">Detalı Bigi için</a><i class="icon-chevron-right icon-stacked text-smaller color"></i></h4>
 			</div>
 		</div><!-- #top-bar end -->
 
@@ -18,8 +19,8 @@
 						<!-- Logo
 						============================================= -->
 						<div id="logo">
-							<a href="index.html" class="standard-logo"><img src="demos/covid-care/images/logo.png" alt="Canvas Logo"></a>
-							<a href="index.html" class="retina-logo"><img src="demos/covid-care/images/logo@2x.png" alt="Canvas Logo"></a>
+							<a href="{% url 'pages:home' %}" class="standard-logo"><img src="{{setting.logo1.url}}" alt="Canvas Logo"></a>
+							<a href="{% url 'pages:home' %}" class="retina-logo"><img src="{{setting.logo2.url}}" alt="Canvas Logo"></a>
 						</div><!-- #logo end -->
 
 						<!-- Primary Menu Mobile Trigger
@@ -41,7 +42,10 @@
 
 							<ul class="menu-container">
 								<li class="menu-item"><a class="menu-link" href="{% url 'pages:home' %}">AnaSayfa</a></li>
-								<li class="drop-down"><a href="{% url 'pages:about' %}">Hakkımızda</a>
+								
+	
+								<li class="menu-item"><a href="{% url 'pages:about' %}">Hakkımızda</a>
+								
 
 								<li class="menu-item"><a class="menu-link" href="{% url 'pages:services' %}"><div>Hizmetlerimiz</div></a></li>
 								<li class="menu-item"><a class="menu-link" href="{% url 'pages:blog' %}"><div>Blog</div></a></li>

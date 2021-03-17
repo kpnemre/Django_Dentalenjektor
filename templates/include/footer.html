@@ -9,27 +9,27 @@
         <div class="footer-widgets-wrap">
 
             <div class="row justify-content-center">
-                <div class="col-md-7 mb-3 text-center">
-                    <!-- <h3 class="display-3 font-weight-normal font-display mb-5 text-white">Download Our COVID Care App.</h3> -->
-                    <!-- <a href="#" class="button button-light button-large rounded-pill bg-color-2 text-dark px-4 py-2 h-op-09 op-ts">Register</a> -->
-                    <!-- <a href="#" class="button button-light button-large bg-white rounded-pill color px-4 py-2 ml-2 h-op-09 op-ts">Download App</a> -->
+                <!-- <div class="col-md-7 mb-3 text-center">
+                    <h3 class="display-3 font-weight-normal font-display mb-5 text-white">Download Our COVID Care App.</h3>
+                    <a href="#" class="button button-light button-large rounded-pill bg-color-2 text-dark px-4 py-2 h-op-09 op-ts">Register</a>
+                    <a href="#" class="button button-light button-large bg-white rounded-pill color px-4 py-2 ml-2 h-op-09 op-ts">Download App</a>
                 </div>
-                <div class="w-100 clear line"></div>
+                <div class="w-100 clear line"></div> -->
                 <div class="col-lg-9">
                     <div class="widget clearfix">
 
                         <div class="row col-mb-30">
                             <div class="col-lg-3 col-6 widget_links">
                                 <ul>
-                                    <li><a href="#">Home</a></li>
-                                    <li><a href="#">About</a></li>
-                                    <li><a href="#">FAQs</a></li>
-                                    <li><a href="#">Support</a></li>
-                                    <li><a href="#">Contact</a></li>
+                                    <li><a href="{% url 'pages:home' %}">AnaSayfa</a></li>
+                                    <li><a href="{% url 'pages:about' %}">Hakkımızda</a></li>
+                                    <li><a href="{% url 'pages:services' %}">Hizmetlerimiz</a></li>
+                                    <li><a href="{% url 'pages:blog' %}">Blog</a></li>
+                                    <li><a href="{% url 'pages:contact' %}">İletişim</a></li>
                                 </ul>
                             </div>
 
-                            <div class="col-lg-3 col-6 widget_links">
+                            <!-- <div class="col-lg-3 col-6 widget_links">
                                 <ul>
                                     <li><a href="#">Shop</a></li>
                                     <li><a href="#">Portfolio</a></li>
@@ -37,9 +37,9 @@
                                     <li><a href="#">Events</a></li>
                                     <li><a href="#">Forums</a></li>
                                 </ul>
-                            </div>
+                            </div> -->
 
-                            <div class="col-lg-3 col-6 widget_links">
+                            <!-- <div class="col-lg-3 col-6 widget_links">
                                 <ul>
                                     <li><a href="#">Corporate</a></li>
                                     <li><a href="#">Agency</a></li>
@@ -47,9 +47,9 @@
                                     <li><a href="#">Personal</a></li>
                                     <li><a href="#">One Page</a></li>
                                 </ul>
-                            </div>
+                            </div> -->
 
-                            <div class="col-lg-3 col-6 widget_links">
+                            <!-- <div class="col-lg-3 col-6 widget_links">
                                 <ul>
                                     <li><a href="#">Corporate</a></li>
                                     <li><a href="#">Agency</a></li>
@@ -57,7 +57,7 @@
                                     <li><a href="#">Personal</a></li>
                                     <li><a href="#">One Page</a></li>
                                 </ul>
-                            </div>
+                            </div> -->
                         </div>
 
                     </div>
@@ -74,10 +74,14 @@
                             </div>
 
                             <div class="col-12 d-flex justify-content-center justify-content-lg-end">
-                                    <a href="{{setting.facebook_url}}" class="social-icon si-small si-light si-facebook"><i class="icon-facebook"></i></a>
-                                    <a href="{{setting.instagram_url}}" class="social-icon si-small si-light si-instagram"><i class="icon-instagram"></i></a>
-                                    <a href="{{setting.linkedin_url}}" class="social-icon si-small si-light si-linkedin"><i class="icon-linkedin"></i></a>
-                                    <a href="{{setting.twitter_url}}" class="social-icon si-small si-light si-twitter"><i class="icon-twitter"></i></a>
+                                <a href="https://api.whatsapp.com/send?phone={{setting.whatsapp_phone}}" class="social-icon si-colored si-whatsapp" title="WhatsApp">
+                                    <i class="icon-whatsapp"></i>
+                                    <i class="icon-whatsapp"></i>
+                                  </a>
+                                    <a href="{{setting.facebook_url}}" class="social-icon  si-colored si-facebook"><i class="icon-facebook"></i></a>
+                                    <a href="{{setting.instagram_url}}" class="social-icon  si-colored si-instagram"><i class="icon-instagram"></i></a>
+                                    <a href="{{setting.linkedin_url}}" class="social-icon  si-colored si-linkedin"><i class="icon-linkedin"></i></a>
+                                    <a href="{{setting.twitter_url}}" class="social-icon  si-colored si-twitter"><i class="icon-twitter"></i></a>
 
                             </div>
 

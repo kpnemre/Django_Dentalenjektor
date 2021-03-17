@@ -2,7 +2,6 @@ from django.db import models
 from django.utils.text import slugify
 from ckeditor.fields import RichTextField
 
-
 class Home(models.Model):
     title = models.CharField("Başlık", max_length = 75)
     # slug = models.SlugField("site", editable = False, default="")
@@ -33,8 +32,8 @@ class Home(models.Model):
     
     class Meta:
         ordering = ['order']
-        verbose_name_plural = "Herbir Sayfa Ortak Girdiler "
-        verbose_name ="Herbir Sayfa Ortak Girdi "
+        verbose_name_plural = "AnaSayfa Ana İçerik "
+        verbose_name ="AnaSayfa Ana İçerikler "
     
     
     def __str__(self):
@@ -226,7 +225,11 @@ class Setting(models.Model):
     email = models.EmailField()
     phone = models.CharField(max_length=20)
     phone2 = models.CharField(max_length=20)
-    whatsapp_phone = models.CharField(max_length=20)
+    whatsapp_phone = models.CharField(max_length=20,default="")
+    navmessage = models.CharField("Site en üstünde verilecek mesaj", blank=True, max_length = 75)
+    logo1 = models.ImageField("logo1", upload_to='setting/',default = "Rasyonel Dental")
+    logo2 = models.ImageField("logo2", upload_to='setting/',default = "Rasyonel Dental")
+    contact_page_image =  models.ImageField("İletişim Sayfası Ana Resim", null = True, blank = True)
     # image = models.ImageField("Hakkımızda kısmı için resim", blank=True, null=True)
     # content = models.TextField("Hakkımızda kısmı için içerik:")
     favicon = models.ImageField("Favicon resim", blank=True, null=True)

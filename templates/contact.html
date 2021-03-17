@@ -8,7 +8,7 @@
 
 		<!-- Slider / Hero
 		============================================= -->
-		<div id="slider" class="slider-element dark py-0" style="background-size: cover; background-image: url('demos/covid-care/images/page-title/contact.jpg'); background-position: center center; background-repeat: no-repeat;">
+		<div id="slider" class="slider-element dark py-0" style="background-size: cover; background-image: url('{{setting.contact_page_image.url}}'); background-position: center center; background-repeat: no-repeat;">
 
 			<div class="container">
 				<div class="row text-center py-5 min-vh-md-75 justify-content-center align-items-center">
@@ -63,6 +63,16 @@
 								
 								<div class="fbox-content">
 									<h3 class="nott text-larger font-weight-normal mb-2"><a href="{{setting.phone2}}">{{setting.phone2}}</a></h3>
+								</div>
+							</div>
+							<div class="feature-box fbox-sm mb-3">
+								<div class="fbox-icon">
+									<i class="bg-color-50 color icon-whatsapp"></i>
+								</div>
+
+								
+								<div class="fbox-content">
+									<h3 class="nott text-larger font-weight-normal mb-2"><a href="https://api.whatsapp.com/send?phone={{setting.whatsapp_phone}}">{{setting.phone2}}</a></h3>
 								</div>
 							</div>
 							<div class="feature-box fbox-sm mb-5">
@@ -121,7 +131,7 @@
 						</div>
 					</div>
 
-					<div class="card bg-color-2 border-0 mt-5" style="background: url(demos/covid-care/images/illustration/bg-pattern.svg) no-repeat center left / auto 300%;">
+					<!-- <div class="card bg-color-2 border-0 mt-5" style="background: url(demos/covid-care/images/illustration/bg-pattern.svg) no-repeat center left / auto 300%;">
 						<div class="card-body p-5">
 							<div class="row justify-content-between col-mb-30">
 								<div class="col-md-4">
@@ -140,7 +150,7 @@
 								</div>
 							</div>
 						</div>
-					</div>
+					</div> -->
 
 				</div>
 
@@ -151,7 +161,7 @@
 
 	<!-- Go To Top
 	============================================= -->
-	<div id="gotoTop" class="icon-angle-up"></div>
+	<!-- <div id="gotoTop" class="icon-angle-up"></div> -->
 
 
 	{% endblock content %}

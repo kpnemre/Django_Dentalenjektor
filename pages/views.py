@@ -12,6 +12,8 @@ def index(request):
     homemiddleheader = HomeMiddleHeader.objects.filter(active = True)
     first_middle_header = homemiddleheader.first()
     last_middle_header = homemiddleheader.last()
+    setting= Setting.objects.first()    
+    
     #headers = Header.objects.filter(active=True,is_navbar=True)
     #main_headers = headers.filter(is_dropdown=False)
     #dropdown_headers= headers.filter(is_dropdown=True)
@@ -21,6 +23,8 @@ def index(request):
         "homefooterup":homefooterup,
         "first_middle_header": first_middle_header,
         "last_middle_header": last_middle_header,
+        "setting":setting,
+        
         #"dropdown_headers":dropdown_headers,
         # "headers": headers,
     }
@@ -29,6 +33,7 @@ def index(request):
 
 def contact(request):
     # contact= ContactInfo.objects.filter(active = True)
+    home = Home.objects.first()
     setting= Setting.objects.first()    
     if request.method == 'POST':
         name = request.POST.get("template-contactform-name", "")
@@ -50,6 +55,8 @@ def contact(request):
         # "abouts": abouts,
         # "rentings": rentings,
         "setting":setting,
+        "home":home,
+        
         #"active_offer": "active"
     }
     return render(request, "contact.html", context)
@@ -59,9 +66,17 @@ def contact(request):
 def about(request):
     about = About.objects.first()
     aboutcontents= AboutContent.objects.all()
+    home = Home.objects.first()
+    setting= Setting.objects.first()    
+    
+    
     context = {
         "about":about,
         "aboutcontents":aboutcontents,
+        "home":home,
+        "setting":setting,
+        
+        
     }
     return render(request,'about.html', context)
 
@@ -69,22 +84,32 @@ def about(request):
 
 def services(request):
     services = Services.objects.first()
+    home = Home.objects.first()
+    setting= Setting.objects.first()    
+    
+
+    
     
     context = {
         "services":services,
+        "home":home,
+        "setting":setting,
+        
+        
     }
     return render(request,'services.html', context)
 
 def blog(request):
     home = Home.objects.first()
+    setting= Setting.objects.first()    
+    
     
     context = {
         "home":home,
+        "setting":setting,
+        
     }
     return render(request,'blog.html', context)
-
-
-
 
 
 

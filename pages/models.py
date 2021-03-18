@@ -223,7 +223,7 @@ class ProductTitle(models.Model):
         verbose_name_plural = 'Ürünler'
 
     def __str__(self):
-        return self.titl
+        return self.title
 
 
 class ProductContent(models.Model):
@@ -231,7 +231,7 @@ class ProductContent(models.Model):
     title= models.CharField("Ürün Başlık", max_length=50)
     image= models.ImageField("Ürün Resim", null = True, blank = True)
     image_def= models.CharField("Ürün Resim Açıklaması", blank = True, max_length=50)
-    content=RichTextField(" Ürün içerik", blank=True, max_length=250)
+    content=RichTextField(" Ürün içerik", blank=True)
     
     class Meta:
         verbose_name = 'Ürün Bilgi'

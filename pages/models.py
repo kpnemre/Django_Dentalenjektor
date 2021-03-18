@@ -16,11 +16,11 @@ class Home(models.Model):
 
     below_title=models.CharField("Alt Başlık", blank=True, max_length=150)
     below_image = models.ImageField("Alt Resim", null = True, blank = True)
-    below_content=models.CharField("Alt içerik", blank=True, max_length=150)
-    last_title=models.CharField("En Alt Başlık", blank=True, max_length=150)
+    below_content=models.CharField("Alt içerik", blank=True, max_length=200)
+    last_title=models.CharField("En Alt Başlık", blank=True, max_length=75)
     last_image1= models.ImageField("En Alt Resim", null = True, blank = True)
     last_image2= models.ImageField("En Alt Resim", null = True, blank = True)
-    last_content=models.CharField("En Alt içerik", blank=True, max_length=150) 
+    last_content=models.CharField("En Alt içerik", blank=True, max_length=200) 
       
     description = models.CharField("Sayfanın search engine açıklaması", max_length = 120)
     is_navbar = models.BooleanField("Navbarda gösterilsin mi?", default = True)
@@ -134,11 +134,12 @@ class Icon (models.Model):
         
              
 class ContactInfo(models.Model):
-    name = models.CharField("İsim Soy:", max_length = 30)
+    name = models.CharField("İSİM:", max_length = 30)
     email = models.EmailField("Eposta adresi:")
     # number = models.SmallIntegerField("Telefon Numaranız:")
     message = models.TextField("Mesajınız:")
-    active = models.BooleanField("Sitede gösterilsin mi?", default = True)
+    # active = models.BooleanField("Sitede gösterilsin mi?", default = True)
+    # publish_date=models.DateTimeField("Yayınlanma Tarihi", auto_now_add=True)
 
     class Meta:
         verbose_name = 'Gelen Mesaj'
@@ -183,7 +184,7 @@ class AboutContent(models.Model):
     about = models.ForeignKey(About, on_delete = models.CASCADE, related_name='aboutcontent')
     title= models.CharField("Hakkımızda Başlık", max_length=50)
     image= models.ImageField("Hakkımızda Resim", null = True, blank = True)
-    content=models.CharField(" Hakkımızda içerik", blank=True, max_length=250)
+    content=RichTextField(" Hakkımızda içerik", blank=True, max_length=250)
     
     class Meta:
         verbose_name = 'Hakkımızda Bilgi'
@@ -211,7 +212,60 @@ class Services(models.Model):
 
     def __str__(self):
         return self.title 
-       
+
+class ProductTitle(models.Model):
+    title= models.CharField("Ürünlerimiz Başlık", max_length=50)
+    image= models.ImageField("Ürünlerimiz Sayfa Resim", null = True, blank = True)
+    content=RichTextField(" Ürünlerimiz içerik", blank=True, max_length=250)
+    
+    class Meta:
+        verbose_name = 'Ürün'
+        verbose_name_plural = 'Ürünler'
+
+    def __str__(self):
+        return self.titl
+
+
+class ProductContent(models.Model):
+    header = models.ForeignKey(ProductTitle, on_delete = models.CASCADE, related_name='aboutcontent')
+    title= models.CharField("Ürün Başlık", max_length=50)
+    image= models.ImageField("Ürün Resim", null = True, blank = True)
+    image_def= models.CharField("Ürün Resim Açıklaması", blank = True, max_length=50)
+    content=RichTextField(" Ürün içerik", blank=True, max_length=250)
+    
+    class Meta:
+        verbose_name = 'Ürün Bilgi'
+        verbose_name_plural = 'Ürün Bilgiler'
+
+    def __str__(self):
+        return self.title  
+    
+    
+      
+# class Products(models.Model):
+#     title = models.CharField("Ürünler Başlık", max_length=50)
+#     content= RichTextField("Ürünler Açıklama")
+
+#     class Meta:
+#         verbose_name = 'Ürün'
+#         verbose_name_plural = 'Ürünler '
+
+#     def __str__(self):
+#         return self.title 
+
+# class Productsdetail(models.Model):
+#     header = models.ForeignKey(Products, on_delete = models.CASCADE, related_name='products')
+#     title = models.CharField("Ürün Başlığı", max_length=50)
+#     content= RichTextField("Ürün Bilgisi")
+
+#     class Meta:
+#         verbose_name = 'Ürünler İçerik'
+#         verbose_name_plural = 'Ürünler İçerikler'
+
+#     def __str__(self):
+#         return self.title 
+
+     
 class Setting(models.Model):
     title = models.CharField("title", max_length=50)
     description = models.CharField("Google'da çıkacak olan yazı", max_length=150)

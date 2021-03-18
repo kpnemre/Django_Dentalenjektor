@@ -9,6 +9,12 @@ class AboutContentInline(nested_admin.NestedStackedInline):
 class AboutAdmin(nested_admin.NestedModelAdmin):
     inlines = [AboutContentInline]
 
+class ProductContentInline(nested_admin.NestedStackedInline):
+    model = ProductContent
+
+
+class ProductTitleAdmin(nested_admin.NestedModelAdmin):
+    inlines = [ProductContentInline]
 
 
 admin.site.register(HomeMiddleDetail)
@@ -22,6 +28,8 @@ admin.site.register(Setting)
 admin.site.register(ContactInfo)
 admin.site.register(About, AboutAdmin)
 admin.site.register(Services)
+admin.site.register(ProductTitle,ProductTitleAdmin)
+admin.site.register(ProductContent)
 
 # admin.site.register(About)
 # admin.site.register(AboutContent)

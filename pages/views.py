@@ -38,16 +38,13 @@ def contact(request):
     setting= Setting.objects.first()  
     
     if request.method == 'POST':
+        print("post çalıştı mı?")
         form= ContactForm(request.POST)
         if form.is_valid():
+            print("form valid mi?")
             form.save()
             messages.success(request, 'Başarı bir şekilde mesajınız tarafımıza iletilmiştir. En kısa sürede sizinle iletişime geçilecektir.')
             return redirect("pages:home")
-        else:
-            form= ContactForm()
-            messages.error(request, 'Lütfen tüm alanları doldurunuz.')
-            return redirect("pages:contact") 
-        
               
     context = {
        

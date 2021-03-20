@@ -87,15 +87,13 @@
 						</div>
 
 						<div class="col-lg-5">
-							<div class="form-widget">
 
-								<div class="form-result"></div>
 
-								<form class="mb-0" name="template-contactform"  method="post">
+								<form class="mb-0"  method="post" novalidate action="#myform" id="myform">
 									<div class="col-12 form-group mb-4">
 
 									{% csrf_token %}
-  									  {{form |crispy}}
+										{{form|crispy}}
 									</div>
 									<!-- <div class="form-process">
 										<div class="css3-spinner">
@@ -131,12 +129,11 @@
 									<!-- <input type="hidden" name="prefix" value="template-contactform-"> -->
 									<!-- <input type="submit" name="prefix" value="Gönder"> -->
 									<div class="col-12 form-group mb-4">
-										<button class="button button-large rounded-pill bg-color px-4 py-2 h-op-09 op-ts m-0" type="submit" name="template-contactform-submit" value="submit">Gönder</button>
+										<input class="button button-large rounded-pill bg-color px-4 py-2 h-op-09 op-ts m-0" type="submit" name="template-contactform-submit" value="Gönder">
 									</div>
 
 								</form>
 							</div>
-						</div>
 					</div>
 
 					<!-- <div class="card bg-color-2 border-0 mt-5" style="background: url(demos/covid-care/images/illustration/bg-pattern.svg) no-repeat center left / auto 300%;">

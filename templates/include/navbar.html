@@ -1,4 +1,9 @@
-{% load static %}		
+{% load static %}
+{% url 'pages:home' as home_url%}
+{% url 'pages:about' as about_url%}
+{% url 'pages:products' as product_url%}
+{% url 'pages:contact' as contact_url%}
+{% url 'pages:services' as service_url%}
 <!-- <div id="wrapper" class="clearfix">	 -->
 		<!-- Top Bar
 		============================================= -->
@@ -41,15 +46,17 @@
 						<nav class="primary-menu">
 
 							<ul class="menu-container">
-								<li class="menu-item"><a class="menu-link" href="{% url 'pages:home' %}">AnaSayfa</a></li>
+								<li class="menu-item {% if request.get_full_path  == home_url %}current{% endif %}">
+									<a class="menu-link active" href="{% url 'pages:home' %}">AnaSayfa</a>
+								</li>
 								
 	
-								<li class="menu-item"><a href="{% url 'pages:about' %}">Hakkımızda</a>
+								<li class="menu-item {% if request.get_full_path  == about_url %}current{% endif %}"><a class= "menu-link" href="{% url 'pages:about' %}">Hakkımızda</a>
 								
 
-								<li class="menu-item"><a class="menu-link" href="{% url 'pages:services' %}"><div>Hizmetlerimiz</div></a></li>
-								<li class="menu-item"><a class="menu-link" href="{% url 'pages:products' %}"><div>Ürünlerimiz</div></a></li>
-								<li class="menu-item"><a class="menu-link" href="{% url 'pages:contact' %}"><div>İletişim</div></a></li>
+								<li class="menu-item {% if request.get_full_path  == service_url %}current{% endif %}"><a class="menu-link" href="{% url 'pages:services' %}"><div>Hizmetlerimiz</div></a></li>
+								<li class="menu-item {% if request.get_full_path  == product_url %}current{% endif %}"><a class="menu-link" href="{% url 'pages:products' %}"><div>Ürünlerimiz</div></a></li>
+								<li class="menu-item {% if request.get_full_path  == contact_url %}current{% endif %}"><a class="menu-link" href="{% url 'pages:contact' %}"><div>İletişim</div></a></li>
 							</ul>
 
 

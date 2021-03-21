@@ -2,6 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta name="author" content="SemiColonWeb" />
 
@@ -35,7 +36,9 @@
       href="{% static 'demos/covid-care/css/fonts.css' %}"
       type="text/css"
     />
-    <!-- / -->
+  <!-- Favicons -->
+  <link href="{{setting.favicon.url}}" rel="icon">
+  <link href="{{setting.favicon.url}}" rel="apple-touch-icon">
 
     <link rel="stylesheet" href="{% static 'css/dark.css' %}" type="text/css" />
     <link
@@ -72,9 +75,13 @@
 
     <!-- Document Title
 	============================================= -->
-    <title>Covid Care | Canvas</title>
+    <title>Rasyonel Dental</title>
+    {% block metalar %}
+    <meta content="{{setting.description}}" name="description">
+    <meta content="{{setting.keywords}}" name="keywords">
+    {% endblock %}
+    <meta name="robots" content="all">
 
-    <!-- <title>{{setting.title}}</title> -->
   </head>
   <body class="stretched">
     <div id="wrapper" class="clearfix">
@@ -108,6 +115,7 @@
 	============================================= -->
     <script src="{% static  'js/jquery.js' %}"></script>
     <script src="{% static  'js/plugins.min.js' %}"></script>
+    <script src="{% static 'lozad.min.js' %}"></script>
 
     <!-- Footer Scripts
 	============================================= -->

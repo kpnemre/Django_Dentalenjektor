@@ -30,7 +30,12 @@
 		<section id="content">
 			<div class="content-wrap p-0">
 
-
+				<div class="row justify-content-center mt-5">
+					<div class="col-md-7 text-center">
+						<h3 class="display-4 color font-weight-bold font-display">{{products.product_title}}</h3>
+						<p class="text-large" style="line-height: 1.5">{{products.content|safe}}</p>
+					</div>
+				</div>
 
 {% for product in products_detail %}
 
@@ -38,7 +43,7 @@
 						<div class="col-lg-6">
 							<h3 class="display-4 color font-weight-normal font-display mb-5">{{product.title}}</h3>
 
-							<p class="text-large color">{{product.content}}</p>
+							<p class="text-large color">{{product.content|safe}}</p>
 
 
 								<!-- <a href="#" class="color font-weight-bold border-bottom border-width-2 border-color mr-2 text-capitalize">Learn more</a><i class="icon-chevron-right icon-stacked text-smaller color"></i> -->

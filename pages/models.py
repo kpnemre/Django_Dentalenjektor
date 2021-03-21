@@ -4,7 +4,6 @@ from ckeditor.fields import RichTextField
 
 class Home(models.Model):
     title = models.CharField("Başlık", max_length = 75)
-    # slug = models.SlugField("site", editable = False, default="")
     created_at = models.DateTimeField(auto_now_add=True, verbose_name= "Created At")
     updated_at = models.DateTimeField(auto_now=True, verbose_name="Updated At")
     herocontent= models.CharField("Slayt içindeki yazı", max_length=150)
@@ -12,8 +11,6 @@ class Home(models.Model):
     image = models.ImageField("resim", null = True, blank = True)
     pagemaintitle= models.CharField("Ana sayfa ana başlığı", max_length=150)
     pagesubcontent=models.CharField("Ana sayfa alt içerik", blank=True, max_length=150)
-    # content = RichTextField("İçerik")
-
     below_title=models.CharField("Alt Başlık", blank=True, max_length=150)
     below_image = models.ImageField("Alt Resim", null = True, blank = True)
     below_content=models.CharField("Alt içerik", blank=True, max_length=200)
@@ -52,8 +49,8 @@ class HomeDetail(models.Model):
     
     class Meta:
         ordering = ['order']
-        verbose_name_plural = "Anasayfa Detaylar"
-        verbose_name ="Anasayfa Detay"
+        verbose_name_plural = "Anasayfa Şerit İçerikler"
+        verbose_name ="Anasayfa Şerit İçerik"
         
     def __str__(self): 
         return self.title
@@ -67,18 +64,18 @@ class HomeMiddleHeader(models.Model):
     
     class Meta:
         ordering = ['order']
-        verbose_name_plural = "Ana Sayfa Orta Alan Başlıklar"
-        verbose_name ="Ana Sayfa Orta Alan Başlık"
+        verbose_name_plural = "Ana Sayfa Orta Alan İçerikler"
+        verbose_name ="Ana Sayfa Orta Alan İçerik"
         
     def __str__(self): 
         return self.title
     
 class HomeMiddleDetail(models.Model):
-    header = models.ForeignKey("pages.HomeMiddleHeader", null= True, blank = True, on_delete = models.CASCADE)
+    header = models.ForeignKey(HomeMiddleHeader, null= True, blank = True, on_delete = models.CASCADE)
     title = models.CharField("Başlık", max_length = 75)
     content = RichTextField("İçerik")
     order = models.SmallIntegerField("Sıralama", default = 0)
-    icon = models.ForeignKey("pages.Icon", null= True, blank = True, on_delete = models.CASCADE)
+    # icon = models.ForeignKey("pages.Icon", null= True, blank = True, on_delete = models.CASCADE)
     active = models.BooleanField("Sitede gösterilsin mi?", default = True)
     
     
@@ -90,20 +87,20 @@ class HomeMiddleDetail(models.Model):
     def __str__(self): 
         return self.title
         
-class HomeIcon(models.Model):
-    title = models.CharField("Başlık", max_length = 75)
-    order = models.SmallIntegerField("Sıralama", default = 0)
-    icon = models.ForeignKey("pages.Icon", null= True, blank = True, on_delete = models.CASCADE)
-    active = models.BooleanField("Sitede gösterilsin mi?", default = True)
+# class HomeIcon(models.Model):
+#     title = models.CharField("Başlık", max_length = 75)
+#     order = models.SmallIntegerField("Sıralama", default = 0)
+#     icon = models.ForeignKey("pages.Icon", null= True, blank = True, on_delete = models.CASCADE)
+#     active = models.BooleanField("Sitede gösterilsin mi?", default = True)
     
     
-    class Meta:
-        ordering = ['order']
-        verbose_name_plural = "Anasayfa Alt İconlar"
-        verbose_name ="Anasayfa Alt İcon" 
+#     class Meta:
+#         ordering = ['order']
+#         verbose_name_plural = "Anasayfa Alt İconlar"
+#         verbose_name ="Anasayfa Alt İcon" 
         
-    def __str__(self): 
-        return self.title
+#     def __str__(self): 
+#         return self.title
    
 class HomeFooterUp(models.Model):
     title = models.CharField("Başlık", max_length = 75)
@@ -126,11 +123,11 @@ class HomeFooterUp(models.Model):
     def __str__(self): 
         return self.title    
 
-class Icon (models.Model):
-    title = models.CharField("İcon adı", max_length = 75)
+# class Icon (models.Model):
+#     title = models.CharField("İcon adı", max_length = 75)
     
-    def __str__(self):
-        return self.title        
+#     def __str__(self):
+#         return self.title        
         
              
 class ContactInfo(models.Model):
@@ -218,9 +215,10 @@ class Services(models.Model):
         return self.title 
 
 class ProductTitle(models.Model):
-    title= models.CharField("Ürünlerimiz Başlık", max_length=50)
+    title= models.CharField("Ürünlerimiz Resim üzeri Başlık", max_length=50)
+    product_title= models.CharField("Ürünlerimiz Başlık",blank = True, max_length=50)
     image= models.ImageField("Ürünlerimiz Sayfa Resim", null = True, blank = True)
-    content=RichTextField(" Ürünlerimiz içerik", blank=True, max_length=250)
+    content=RichTextField(" Ürünlerimiz içerik", blank=True)
     description = models.CharField("Google'da çıkacak olan yazı", max_length=150)
     keywords = models.CharField("Google'da aramalarda çıkabilmek için gerekli anahtar kelimler", max_length=150)   
     

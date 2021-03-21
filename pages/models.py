@@ -151,6 +151,8 @@ class ContactInfo(models.Model):
 class About(models.Model):
     about_title= models.CharField("Hakkımızda Resim Ortası Başlık", max_length=50)
     about_main_image= models.ImageField("Hakkımızda Ana Resim", null = True, blank = True)
+    description = models.CharField("Google'da çıkacak olan yazı", max_length=150)
+    keywords = models.CharField("Google'da çıkması için gerekli anahtar kelimeler", max_length=150)
     images_title= models.CharField("Hakkımızda Resimler Başlık", max_length=50)
     images_content= models.TextField("Hakkımızda Resimler İçerik", max_length=50)
     youtube_url = models.URLField("Hakkımızda Video Linki")
@@ -195,6 +197,8 @@ class AboutContent(models.Model):
     
 class Services(models.Model):
     title= models.CharField("Ana Başlık", max_length=50)
+    description = models.CharField("Google'da çıkacak olan yazı", max_length=150)
+    keywords = models.CharField("Google'da aramalarda çıkabilmek için gerekli anahtar kelimler", max_length=150)   
     main_image= models.ImageField("Ana Resim", null = True, blank = True)
     card1_title= models.CharField("Hizmetler Başlık", max_length=50)
     card1_content= RichTextField("Hizmetler Açıklama")
@@ -217,6 +221,9 @@ class ProductTitle(models.Model):
     title= models.CharField("Ürünlerimiz Başlık", max_length=50)
     image= models.ImageField("Ürünlerimiz Sayfa Resim", null = True, blank = True)
     content=RichTextField(" Ürünlerimiz içerik", blank=True, max_length=250)
+    description = models.CharField("Google'da çıkacak olan yazı", max_length=150)
+    keywords = models.CharField("Google'da aramalarda çıkabilmek için gerekli anahtar kelimler", max_length=150)   
+    
     
     class Meta:
         verbose_name = 'Ürün'
@@ -270,6 +277,8 @@ class Setting(models.Model):
     title = models.CharField("title", max_length=50)
     description = models.CharField("Google'da çıkacak olan yazı", max_length=150)
     keywords = models.CharField("Google'da aramalarda çıkabilmek için gerekli anahtar kelimler", max_length=150)   
+    description_contact = models.CharField("İletişim Sayfası için Google'da çıkacak olan yazı", max_length=150)
+    keywords_contact = models.CharField(" İletişim Sayfası için Google'da aramalarda çıkabilmek için gerekli anahtar kelimler", max_length=150)   
     facebook_url = models.URLField(blank=True)
     twitter_url = models.URLField(blank=True)
     instagram_url = models.URLField(blank=True)

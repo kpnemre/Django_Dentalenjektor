@@ -1,7 +1,13 @@
 
 
 {% extends 'layout.html' %} 
-{% load static %} 
+{% load static %}
+{% block title %} <title>Rasyonel Dental-Hizmetlerimiz</title>{% endblock %}}
+
+{% block metalar %}
+<meta content="{{services.description}}" name="description">
+<meta content="{{services.keywords}}" name="keywords">
+{% endblock %}
 {% block content %}
 
 

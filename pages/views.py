@@ -87,9 +87,6 @@ def contact(request):
                
             
 
-
-
-
 def about(request):
     about = About.objects.first()
     aboutcontents= AboutContent.objects.all()

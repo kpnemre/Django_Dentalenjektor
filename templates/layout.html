@@ -66,16 +66,17 @@
       type="text/css"
     />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-
+<!-- 
     <link
       rel="stylesheet"
       href="{% static 'css/colors.php?color=DE6262' %}"
       type="text/css"
-    />
+    /> -->
 
     <!-- Document Title
 	============================================= -->
-    <title>Rasyonel Dental</title>
+  {% block title %} <title>Rasyonel Dental</title>{% endblock %}
+
     {% block metalar %}
     <meta content="{{setting.description}}" name="description">
     <meta content="{{setting.keywords}}" name="keywords">
@@ -115,14 +116,14 @@
 	============================================= -->
     <script src="{% static  'js/jquery.js' %}"></script>
     <script src="{% static  'js/plugins.min.js' %}"></script>
-    <script src="{% static 'lozad.min.js' %}"></script>
+    <!-- <script src="{% static 'lozad.min.js' %}"></script> -->
 
     <!-- Footer Scripts
 	============================================= -->
     <script src="{% static  'js/functions.js' %}"></script>
-    <script>
+    <!-- <script>
       const observer = lozad();
       observer.observe();
-    </script>
+    </script> -->
   </body>
 </html>

@@ -19,7 +19,8 @@
 				<div class="row text-center py-5 min-vh-md-75 justify-content-center align-items-center">
 					<div class="col-lg-6">
 						<!-- <h5 class="mb-1 text-uppercase ls3 text-white-50 font-body">What We Do</h5> -->
-						<h2 class="display-3 font-weight-bolder ls3 font-display mb-0">{{products.title}}</h2>
+						<h2 class="display-3 font-weight-bolder ls3 font-display mb-0" style="color: #1ABC9C">{{products.title}}</h2>
+
 					</div>
 				</div>
 			</div>
@@ -31,24 +32,24 @@
 			<div class="content-wrap p-0">
 
 				<div class="row justify-content-center mt-5">
-					<div class="col-md-7 text-center">
-						<h3 class="display-4 color font-weight-bold font-display">{{products.product_title}}</h3>
-						<p class="text-large" style="line-height: 1.5">{{products.content|safe}}</p>
+					<div class="col-md-7">
+						<h3 class="display-4 color font-weight-bold font-display text-center">{{products.product_title}}</h3>
+						<p class="text-large text-justify" style="line-height: 1.5; margin: 1rem;">{{products.content|safe}}</p>
 					</div>
 				</div>
 
 {% for product in products_detail %}
 
 					<div class="row justify-content-between align-items-center my-6 col-mb-50">
-						<div class="col-lg-6">
-							<h3 class="display-4 color font-weight-normal font-display mb-5">{{product.title}}</h3>
+						<div class="col-lg-6" style="margin: 2rem;">
+							<h3 class="display-4 color font-weight-normal font-display ">{{product.title}}</h3>
 
-							<p class="text-large color">{{product.content|safe}}</p>
+							<p class="text-large color ">{{product.content|safe}}</p>
 
 
 								<!-- <a href="#" class="color font-weight-bold border-bottom border-width-2 border-color mr-2 text-capitalize">Learn more</a><i class="icon-chevron-right icon-stacked text-smaller color"></i> -->
 						</div>
-						<div class="col-lg-5">
+						<div class="col-lg-5" style="margin-right: 1rem;margin-left: 1rem;">
 							<img src="{{product.image.url}}" alt="{{product.image_def}}" class="img-thumbnail">
 						</div>
 					</div>

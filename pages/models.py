@@ -64,8 +64,8 @@ class HomeMiddleHeader(models.Model):
     
     class Meta:
         ordering = ['order']
-        verbose_name_plural = "Ana Sayfa Orta Alan İçerikler"
-        verbose_name ="Ana Sayfa Orta Alan İçerik"
+        verbose_name_plural = "Ana Sayfa ikinci  Alan İçerikler"
+        verbose_name ="Ana Sayfa ikinci Alan İçerik"
         
     def __str__(self): 
         return self.title

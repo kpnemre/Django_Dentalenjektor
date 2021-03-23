@@ -20,8 +20,8 @@
 			<div class="container">
 				<div class="row text-center py-5 min-vh-md-75 justify-content-center align-items-center">
 					<div class="col-lg-6">
-						<h5 class="mb-1 text-uppercase ls3 text-white-50 font-body">Hakkımızda</h5>
-						<h2 class="display-3 font-weight-bolder ls3 font-display mb-5">{{about.about_title}}</h2>
+						<h5 class="mb-1 text-uppercase ls3 text-white-50 font-body" >Hakkımızda</h5>
+						<h2 class="display-3 font-weight-bolder ls3 font-display mb-5" style="color: #1ABC9C">{{about.about_title}}</h2>
 					</div>
 				</div>
 			</div>
@@ -45,7 +45,7 @@
 									
 								<a class="nav-link {% if forloop.counter == 1 %}active{% endif %}" id="canvas-tabs-{{forloop.counter}}-tab" data-toggle="pill" href="#canvas-tabs-{{forloop.counter}}" role="tab" >
 									<h3><span class="color-2 font-body mr-1">{{forloop.counter}}.</span> {{about.title}}</h3>
-									<p>{{about.content}}</p>
+									<p>{{about.content|safe}}</p>
 								</a>
 								
 								{% endfor %}
@@ -66,7 +66,7 @@
 									<div class="clear"></div>
 									<div class="d-block text-left mt-5 mw-xs">
 										<h3 class="mb-3">{{about.title}}</h3>
-										<p class="mb-0">{{about.content}}</p>
+										<p class="mb-0">{{about.content|safe}}</p>
 									</div>
 								</div>
 								{% endfor %}
@@ -123,8 +123,8 @@
 
 							<div class="col-lg-6 col-md-6 mt-5 mt-sm-0">
 								<div class="d-none d-lg-flex">
-									<img src="{{about.middle_image1.url}}" class="fast" alt="{{about.middle_image1_content}}" style="height: 450px" data-animate="fadeInUp" data-delay="200">
-									<img src="{{about.middle_image2.url}}" class="fast" alt="{{about.middle_image2_content}}" style="height: 450px" data-animate="fadeInUp">
+									<img src="{{about.middle_image1.url}}" class="fast" alt="{{about.middle_image1_content}}" style="height: 350px;margin: 1rem;border-radius: 1rem;" data-animate="fadeInUp" data-delay="200">
+									<img src="{{about.middle_image2.url}}" class="fast" alt="{{about.middle_image2_content}}" style="height: 350px;margin: 1rem;border-radius: 1rem;" data-animate="fadeInUp">
 								</div>
 								<!-- <img src="demos/covid-care/images/iphone.png" alt="Image" class="d-block d-lg-none px-5 px-sm-0 p-md-5"> -->
 							</div>

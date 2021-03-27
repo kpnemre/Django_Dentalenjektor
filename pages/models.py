@@ -58,6 +58,7 @@ class HomeDetail(models.Model):
 class HomeMiddleHeader(models.Model):
     title=models.CharField(" Başlık", blank=True, max_length=150)
     image = models.ImageField(" Resim", null = True, blank = True)
+    image_def= models.CharField("Resim Açıklaması", blank = True, max_length=50)
     content=models.CharField(" Başlık içerik", blank=True, max_length=250)
     order = models.SmallIntegerField("Sıralama", default = 0)
     active = models.BooleanField("Sitede gösterilsin mi?", default = True)
